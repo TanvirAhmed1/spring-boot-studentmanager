@@ -27,7 +27,7 @@ public class StudentService {
         return studentRepo.save(student);
     }
 
-    public Student findStudent(Long id) {
+    public Student findStudentById(Long id) {
         return studentRepo.findStudentById(id).orElseThrow(() -> new UserNotFoundException("User by id " + id + "was not found"));
     }
 
