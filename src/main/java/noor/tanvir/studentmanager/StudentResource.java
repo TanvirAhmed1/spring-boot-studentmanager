@@ -1,4 +1,5 @@
-package noor.tanvir.studentmanager.controller;
+package noor.tanvir.studentmanager;
+
 
 import noor.tanvir.studentmanager.model.Student;
 import noor.tanvir.studentmanager.service.StudentService;
@@ -10,14 +11,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController {
+public class StudentResource {
     public final StudentService studentService;
 
-    public StudentController(StudentService studentService) {
+    public StudentResource(StudentService studentService) {
         this.studentService = studentService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Student>> getAllStudents(){
         List<Student> students= studentService.findAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
@@ -46,5 +47,4 @@ public class StudentController {
         studentService.deleteStudent(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }

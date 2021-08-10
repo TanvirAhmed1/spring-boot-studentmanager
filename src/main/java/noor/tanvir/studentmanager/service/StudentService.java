@@ -3,13 +3,16 @@ package noor.tanvir.studentmanager.service;
 import noor.tanvir.studentmanager.model.Student;
 import noor.tanvir.studentmanager.repo.StudentRepo;
 import noor.tanvir.studentmanager.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class StudentService {
     private final StudentRepo studentRepo;
-
+    @Autowired
     public StudentService(StudentRepo studentRepo) {
         this.studentRepo = studentRepo;
     }

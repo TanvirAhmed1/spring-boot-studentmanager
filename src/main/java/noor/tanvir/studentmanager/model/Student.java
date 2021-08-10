@@ -1,11 +1,8 @@
 package noor.tanvir.studentmanager.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
-
+@Entity
 public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
